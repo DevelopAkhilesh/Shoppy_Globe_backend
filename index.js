@@ -6,6 +6,7 @@ import cors from 'cors';
 
 import AppError from './src/utils/appError.js';
 import authRoutes from './src/routes/authRoutes.js';
+import productRoutes from './src/routes/productRoutes.js';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -48,8 +49,10 @@ app.get('/', (req, res) => {
     },
   });
 });
-
+// auth routes
 app.use("/api",authRoutes);
+// product routes
+app.use("/api/product",productRoutes);
 
 
 //* This catches any request that doesn't match any of the above routes
