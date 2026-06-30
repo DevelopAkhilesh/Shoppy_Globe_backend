@@ -32,12 +32,9 @@ export const registerUser = catchAsync(async(req,res,next)=>{
     password,
   });
  // Generate JWT token
-    const token = generateToken(user._id);
+    // const token = generateToken(user._id);
     //Send response (password is automatically excluded via toJSON)
-     sendSuccess(res, {
-    user,
-    token,
-  }, 'User registered successfully!', 201);
+     sendSuccess(res, {user}, 'User registered successfully! Please login.', 201);
 
 })
 
